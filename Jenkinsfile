@@ -7,7 +7,7 @@ pipeline
 		{
 			steps 
 			{
-				sh 'composer install'
+				sh 'apt-get install -y composer'
 			}
 		}
 		stage('Test') 
