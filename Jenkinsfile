@@ -2,7 +2,7 @@ pipeline
 {
     agent{
 		docker{
-			image 'composer:latest'
+			image 'composer:composer'
 		}
 	}
 	stages 
