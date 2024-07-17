@@ -1,18 +1,22 @@
 <?php
 
-class GumballMachine {
-
+class GumballMachine 
+{
 	private $gumballs;
 	
-	public function getGumballs() {
+	public function getGumballs() 
+	{
 		return $this->gumballs;
 	}
 	
-	public function setGumballs($amount) {
+	public function setGumballs($amount) 
+	{
 		$this->gumballs = $amount;
 	}
 	
-	public function turnWheel() {
-		$this->setGumballs($this->getGumballs()-1);
+	public function turnWheel()
+	{
+		// $this->setGumballs($this->getGumballs()-1);
+		$this->setGumballs($this->getGumballs()-2);
 	}
 }
