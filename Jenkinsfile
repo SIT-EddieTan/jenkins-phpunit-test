@@ -23,6 +23,21 @@ pipeline
                 sh './vendor/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
             }
 		}
+		
+		stage('OWASP Dependency-Check Vulnerabilities')     
+        {
+            steps 
+            {
+                dependencyCheck additionalArguments: ''' 
+                    -o './'
+                    -s './'
+                    -f 'ALL' 
+                    --prettyPrint''', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+        
+                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+            }
+        }
+
 	}
 	post
 	{
